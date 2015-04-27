@@ -24,12 +24,8 @@ After you have the Encription initilized you can:
 
 <h1>Dependencies:</h1>
 
-<i>This	section	contains	a	description	of	any	dependencies	that	your	program	requires.	
-For	example,	if	your	program	relies	on	another	third-party	library	that	needs	to	be	
-installed,	you	should	provide	a	description	of	where	to	find	that	library	and	
-instructions	for	how	to	install	it.</i>
+<p>The program includes the random library, the iostream library, the queue library, the stdio.h library, the string library, and the iostream library.  All of these libraries come packaged with C++  .</p>
 
-<h2><b>snook, please complete the above ^ I can format it later</b></h2>
 
 <h1>System	Requirements:</h1>
 
@@ -41,7 +37,7 @@ instructions	for	how	to	install	it.</i>
     <li>Nicholas Pfeufer</li> 
     <li>Tanner Tracy</li> 
     <li>Cyron Completo</li>
-    <li>Snooky</li>
+    <li>Harrison Snook</li>
 </ul>
 
 <h1>Contributors:</h1>
