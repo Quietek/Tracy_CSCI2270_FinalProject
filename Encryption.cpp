@@ -142,6 +142,30 @@ void Encryption::encrypt()
                 i++;
                 temp = temp + key[j]
             }
+            encryptshift(temp);
+        }
+        if(key[i] == paceRandNote){
+            if(i+1 < key.size()){
+                encryptrandom(key[i+1]);
+            }
+        }
+    }
+}
+
+void Encryption::decrypt()
+{
+    int scramble = 13%(base*0.2) + 97;
+    int placerand = 13%(base*0.7) + 13 + 97;
+    std::string scrambleNote = std::to_string(scramble);
+    std::string placeRandNote = std::to_string(placerand);
+    std::string temp;
+    for(int i = 0; i<key.size(); i++){
+        temp = "";
+        if(key[i] == scrambleNote){
+            for(int j = i+1; j<key.size(); j++){
+                i++;
+                temp = temp + key[j]
+            }
             decryptshift(temp);
         }
         if(key[i] == paceRandNote){
@@ -150,9 +174,4 @@ void Encryption::encrypt()
             }
         }
     }
-}
-
-void Encryption::decrypt()
-{
-    
 }
