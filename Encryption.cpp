@@ -1,11 +1,20 @@
 #include "Encryption.h"
-#include <rand>
+#include <random>
+#include <iostream>
+#include <queue>
 
-Encryption::Encryption(int keylength)
+Encryption::Encryption(int keylength, std::string temp)
 {
     generatekey(keylength);
+    setstring(temp);
 }
 
+Encryption::Encryption(std::string keystr, std::string temp, int base)
+{
+    manualkey(keystr);
+    setstring(temp);
+    setbase(base);
+}
 Encryption::~Encryption()
 {
     
@@ -16,8 +25,8 @@ void Encryption::generatekey(int keylength)
     std::string temp = "";
     for (int i = 0; i < keylength; i++)
     {
-        int intchar = rand() % 26 + 97;
-        std::string temp = temp + intchar;
+        char c = rand() % 26 + 97;
+        temp = temp + c;
     }
     key = temp;
 }
@@ -27,34 +36,56 @@ void Encryption::manualkey(std::string str)
     key = str;
 }
 
-std::string Encryption::encrypt(std::string str)
+void Encryption::setstring(std::string temp)
 {
-    int length = str.length();
-    std::string encstr = "";
-    for (int i = 0; i < length; i++)
+    str = temp;
+}
+void Encryption::encryptshift()
+{
+    std::string temp = "";
+    std::queue<char> Q;
+    char c;
+    for( int i = 0; i < str.length(); i++)
     {
-        int keypos = i % key.length();
-        char c = str[i] - key[keypos];
-        encstr += c;
+        Q.push(str[i]);
     }
-    return encstr;
+    while(!Q.empty())
+    {
+        c = Q.front();
+        int keypos = Q.size() % key.size();
+        c = c - key[keypos];
+        temp = temp + c;
+        Q.pop();
+    }
+    str = temp;
 }
 
-std::string Encryption::decrypt(std::string str, std::string keystr)
+void Encryption::decryptshift(std::string keystr)
 {
-    int length = str.length();
-    std::string decstr = "";
-    for (int i = 0; i < length; i++)
+    std::string temp = "";
+    std::queue<char> Q;
+    char c;
+    for( int i = 0; i < str.length(); i++)
     {
-        int keypos = i % keystr.length();
-        char c = str[i] + keystr[keypos];
-        decstr += c;
+        Q.push(str[i]);
     }
-    return decstr;
-    
+    while(!Q.empty())
+    {
+        c = Q.front();
+        int keypos = Q.size() % key.size();
+        c = c + key[keypos];
+        temp = temp + c;
+        Q.pop();
+    }
+    str = temp;
 }
 
 std::string Encryption::getkey()
 {
     return key;
+}
+
+std::string Encryption::getstring()
+{
+    return str;
 }
