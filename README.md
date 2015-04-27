@@ -46,7 +46,7 @@ instructions	for	how	to	install	it.</i>
 
 <h1>Contributors:</h1>
 
-    <p>No one, make a comment and see your name here! (maybe, I make no promises)</p>
+    No one, make a comment and see your name here! (maybe, I make no promises)
     
 <h1>Open	issues/bugs:</h1>
    <p> Hopefully none. Find a bug? Help us squash it and become a contributor/hero/best-person-ever in less time then the eventual heat death of the universe.</p>
