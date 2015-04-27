@@ -7,6 +7,8 @@ Encryption::Encryption(int keylength, std::string temp)
 {
     generatekey(keylength);
     setstring(temp);
+    int tempint = rand() % 999 + 1;
+    base = tempint;
 }
 
 Encryption::Encryption(std::string keystr, std::string temp, int base)
@@ -40,7 +42,7 @@ void Encryption::setstring(std::string temp)
 {
     str = temp;
 }
-void Encryption::encryptshift()
+void Encryption::encryptshift(std::string keystr)
 {
     std::string temp = "";
     std::queue<char> Q;
@@ -52,8 +54,16 @@ void Encryption::encryptshift()
     while(!Q.empty())
     {
         c = Q.front();
-        int keypos = Q.size() % key.size();
+        int keypos = Q.size() % keystr.size();
         c = c - key[keypos];
+        while (c < 0)
+        {
+            c = c + 127;
+        }
+        while (c > 127)
+        {
+            c = c - 127;
+        }
         temp = temp + c;
         Q.pop();
     }
@@ -72,8 +82,16 @@ void Encryption::decryptshift(std::string keystr)
     while(!Q.empty())
     {
         c = Q.front();
-        int keypos = Q.size() % key.size();
+        int keypos = Q.size() % keystr.size();
         c = c + key[keypos];
+        while (c > 127)
+        {
+            c = c - 127;
+        }
+        while (c < 0)
+        {
+            c = c + 127;
+        }
         temp = temp + c;
         Q.pop();
     }
@@ -88,4 +106,34 @@ std::string Encryption::getkey()
 std::string Encryption::getstring()
 {
     return str;
+}
+
+void Encryption::encryptrandom(std::string key)
+{
+    
+}
+
+void Encryption::decryptrandom(std::string key)
+{
+    
+}
+
+void Encryption::setbase(int baseint)
+{
+    base = baseint;
+}
+
+int Encryption::getbase()
+{
+    return base;
+}
+
+void Encryption::encrypt()
+{
+    
+}
+
+void Encryption::decrypt()
+{
+    
 }
