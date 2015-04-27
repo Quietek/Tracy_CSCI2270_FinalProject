@@ -1,6 +1,6 @@
 <h1>Project	Summary:</h1>
 
-    This project is an encription librabary ment to take strings and make them more protected from unwanted viewers at the moment it primarilly shuffels ASCII values 
+   <p> This project is an encription librabary ment to take strings and make them more protected from unwanted viewers at the moment it primarilly shuffels ASCII values </p>
 
 <h1>How	to	Run:</h1>
 
@@ -20,7 +20,7 @@ After you have the Encription initilized you can:
 <li>call manualkey(string key) to change the key to what you entered, works for all ASCII characters (WARNING: this will replace the old key)</li>
 </ul>
 
-<font color="red">A link will go here (Task given to Cyron)</font>
+<h2><b>A link will go here (Task given to Cyron)</b></h2>
 
 <h1>Dependencies:</h1>
 
@@ -29,7 +29,7 @@ For	example,	if	your	program	relies	on	another	third-party	library	that	needs	to
 installed,	you	should	provide	a	description	of	where	to	find	that	library	and	
 instructions	for	how	to	install	it.</i>
 
-<font color="red">snook, please complete the above ^ I can format it later</font>
+<h2><b>snook, please complete the above ^ I can format it later</b></h2>
 
 <h1>System	Requirements:</h1>
 
@@ -46,7 +46,7 @@ instructions	for	how	to	install	it.</i>
 
 <h1>Contributors:</h1>
 
-    No one, make a comment and see your name here! (maybe, I make no promises)
+    <p>No one, make a comment and see your name here! (maybe, I make no promises)</p>
     
 <h1>Open	issues/bugs:</h1>
-    Hopefully none. Find a bug? Help us squash it and become a contributor/hero/best-person-ever in less time then the eventual heat death of the universe.
+   <p> Hopefully none. Find a bug? Help us squash it and become a contributor/hero/best-person-ever in less time then the eventual heat death of the universe.</p>
