@@ -14,9 +14,18 @@ class Encryption
         std::string encrypt(std::string str);
         std::string decrypt(std::string str, std::string key);
         std::string getkey();
+        
+        void encryptrandom(std::string key);
+        void decryptrandom(std::string key);
+        void setbase(int temp);
+        void getbase();
     protected:
     private:
         std::string key;
+        
+        
+        
+        int base;
 };
 
 
