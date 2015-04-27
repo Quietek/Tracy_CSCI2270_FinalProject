@@ -4,11 +4,11 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     string teststring = "hello world";
-    Encryption enc = Encryption(10);
-    string newstring = enc.encrypt(teststring);
-    cout << newstring << endl;
+    Encryption enc = Encryption(10, teststring);
     string key = enc.getkey();
-    string oldstring = enc.decrypt(newstring, key)
-    cout << oldstring << endl;
+    enc.encryptshift(key);
+    cout << enc.getstring()<< endl;
+    enc.decryptshift(key);
+    cout << enc.getstring()<< endl;
     return 0;
 }
