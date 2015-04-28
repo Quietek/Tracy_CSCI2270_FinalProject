@@ -156,7 +156,7 @@ void Encryption::encrypt()
     for(int i = 0; i<key.size(); i++){
         temp = "";
         if(key[i] == scrambleNote){
-            for(int j = i+1; j<key.size(); j++){
+            for(int j = i+1; j<key.size() && j<10; j++){
                 i++;
                 temp = temp + key[j];
             }
@@ -172,7 +172,7 @@ void Encryption::encrypt()
 
 void Encryption::decrypt()
 {
-    std::vector<std::string> reverse;
+    std::vector<std::string> reversa;
     int scramble = 13%(base*0.2) + 97;
     int placerand = 13%(base*0.7) + 13 + 97;
     std::string scrambleNote = std::to_string(scramble);
@@ -182,16 +182,33 @@ void Encryption::decrypt()
         temp = "";
         if(key[i] == scrambleNote){
             temp = temp + key[i];
-            for(int j = i+1; j<key.size(); j++){
+            for(int j = i+1; j<key.size() && j<10; j++){
                 i++;
                 temp = temp + key[j];
             }
-            decryptshift(temp);
+            reversa.push_back(temp);
+           
         }
         if(key[i] == paceRandNote){
+            temp = "";
+            temp = temp + key[i];
             if(i+1 < key.size()){
+                temp = temp + key[i+1];
                 decryptrandom(key[i+1]);
+                reversa.push_back(temp);
             }
+            
+        }
+    }
+    std::string determinate;
+    for(int i = key.size()-1; i >= 0; i--){
+        temp = reversa[i];
+        determinate = temp.substr(0,1);
+        temp = temp.substr(1);
+        if(determinate == scrambleNote){
+            decryptshift(temp);
+        }else if(determinate == paceRandNote){
+            decryptrandom(key[i+1]);
         }
     }
 }
