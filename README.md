@@ -40,7 +40,7 @@ After you have the Encryption initialized you can:
 
 <h1>Contributors:</h1>
 
-<p>No one yet. If you would like to be listed as a contributor, leave a comment listing the changes you've made.</p>
+   <p>No one yet. If you would like to be listed as a contributor, leave a comment listing the changes you've made.</p>
     
 <h1>Open	issues/bugs:</h1>
    <ul>
