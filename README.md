@@ -20,6 +20,8 @@ After you have the Encryption initialized you can:
 <li>call manualkey(string key) to change the key to what you entered, works for all ASCII characters (WARNING: this will replace the old key)</li>
 </ul>
 
+<h2>Note: See the main.cpp for how to use the program.</h2>
+
 <h1>Dependencies:</h1>
 
 <p>The program includes the random library, the iostream library, the queue library, the stdio.h library, the string library, the vector library and the iostream library.  All of these libraries come packaged with C++.</p>
@@ -39,10 +41,6 @@ After you have the Encryption initialized you can:
 </ul>
 
 <h1>Contributors:</h1>
-
    <p>No one yet. If you would like to be listed as a contributor, leave a comment listing the changes you've made.</p>
-    
 <h1>Open	issues/bugs:</h1>
-   <ul>
    <p>No issues currently. Please let us know in the issues section if you find anything.</p>
-   </ul>
