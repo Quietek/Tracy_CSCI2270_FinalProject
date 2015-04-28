@@ -22,6 +22,9 @@ public:
     std::string getkey();
     std::string getstring();
     
+    void encryptshiftchar(char c, offset);
+    void decryptshiftchar(char c, offset);
+    
     void encryptrandom(std::string key);
     void decryptrandom(std::string key);
     void setbase(int temp);
