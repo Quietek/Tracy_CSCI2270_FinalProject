@@ -109,12 +109,12 @@ std::string Encryption::getstring()
     return str;
 }
 
-void Encryption::encryptrandom(std::string key)
+void Encryption::encryptrandom(std::string keystr)
 {
     
 }
 
-void Encryption::decryptrandom(std::string key)
+void Encryption::decryptrandom(std::string keystr)
 {
     
 }
@@ -141,7 +141,7 @@ void Encryption::encrypt()
         if(key[i] == scrambleNote){
             for(int j = i+1; j<key.size(); j++){
                 i++;
-                temp = temp + key[j]
+                temp = temp + key[j];
             }
             encryptshift(temp);
         }
@@ -155,6 +155,7 @@ void Encryption::encrypt()
 
 void Encryption::decrypt()
 {
+    std::vector<std::string> reverse;
     int scramble = 13%(base*0.2) + 97;
     int placerand = 13%(base*0.7) + 13 + 97;
     std::string scrambleNote = std::to_string(scramble);
@@ -163,9 +164,10 @@ void Encryption::decrypt()
     for(int i = 0; i<key.size(); i++){
         temp = "";
         if(key[i] == scrambleNote){
+            temp = temp + key[i];
             for(int j = i+1; j<key.size(); j++){
                 i++;
-                temp = temp + key[j]
+                temp = temp + key[j];
             }
             decryptshift(temp);
         }
