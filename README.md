@@ -1,6 +1,6 @@
 <h1>Project	Summary:</h1>
 
-   <p> This project is an encryption librabary ment to take strings and make them more protected from unwanted viewers at the moment it primarily shuffles ASCII values </p>
+   <p> This project is an encryption library ment to take strings and make them more protected from unwanted viewers at the moment it primarily shuffles ASCII values </p>
 
 <h1>How	to	Run:</h1>
 
