@@ -24,7 +24,7 @@ After you have the Encryption initialized you can:
 
 <h1>Dependencies:</h1>
 
-<p>The program includes the random library, the iostream library, the queue library, the stdio.h library, the string library, and the iostream library.  All of these libraries come packaged with C++  .</p>
+<p>The program includes the random library, the iostream library, the queue library, the stdio.h library, the string library, the vector library and the iostream library.  All of these libraries come packaged with C++.</p>
 
 
 <h1>System	Requirements:</h1>
