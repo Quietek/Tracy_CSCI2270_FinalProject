@@ -22,8 +22,8 @@ public:
     std::string getkey();
     std::string getstring();
     
-    void encryptshiftchar(char c, offset);
-    void decryptshiftchar(char c, offset);
+    void encryptshiftchar(char c, int offset);
+    void decryptshiftchar(char c, int offset);
     
     void encryptrandom(std::string key);
     void decryptrandom(std::string key);
