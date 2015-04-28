@@ -2,6 +2,7 @@
 #include <random>
 #include <iostream>
 #include <queue>
+#include <vector>
 
 Encryption::Encryption(int keylength, std::string temp)
 {
