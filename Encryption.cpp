@@ -128,12 +128,30 @@ std::string Encryption::getstring()
 
 void Encryption::encryptrandom(std::string keystr)
 {
-    
+    int length = str.length;
+    int distance = (ketstr-97)*.3) % 3;
+    if(distance == 0)
+    {
+        distance++;
+    }
+    for(int i = 0; i < length+length/distance; i++)
+    {
+        str.insert(distance+i, static_cast<char>(rand() % 122 + 97));
+    }
 }
 
 void Encryption::decryptrandom(std::string keystr)
 {
-    
+    int length = str.length;
+    int distance = (ketstr-97)*.3) % 3;
+    if(distance == 0)
+    {
+        distance++;
+    }
+    for(int i = 0; i < length - length/distance)
+    {
+        str.erase(str.begin()+i+distance);
+    }
 }
 
 void Encryption::setbase(int baseint)
