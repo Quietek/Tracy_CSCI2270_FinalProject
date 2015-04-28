@@ -46,4 +46,6 @@ After you have the Encryption initialized you can:
     No one else
     
 <h1>Open	issues/bugs:</h1>
-   <p> Hopefully none. Find a bug? Help us squash it and become a contributor/hero/best-person-ever in less time then the eventual heat death of the universe.</p>
+   <ul>
+   <li>Issue with multiple encryptions and attempting to decrypt back to original.</li>
+   </ul>
