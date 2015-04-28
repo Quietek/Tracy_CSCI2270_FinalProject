@@ -20,8 +20,6 @@ After you have the Encryption initialized you can:
 <li>call manualkey(string key) to change the key to what you entered, works for all ASCII characters (WARNING: this will replace the old key)</li>
 </ul>
 
-<h2><b>A link will go here (Task given to Cyron)(What do you mean by link)</b></h2>
-
 <h1>Dependencies:</h1>
 
 <p>The program includes the random library, the iostream library, the queue library, the stdio.h library, the string library, the vector library and the iostream library.  All of these libraries come packaged with C++.</p>
@@ -42,10 +40,9 @@ After you have the Encryption initialized you can:
 
 <h1>Contributors:</h1>
 
-    Cyron (Dwarfnado) Completo
-    No one else
+<p>No one yet. If you would like to be listed as a contributor, leave a comment listing the changes you've made.</p>
     
 <h1>Open	issues/bugs:</h1>
    <ul>
-   <li>Issue with multiple encryptions and attempting to decrypt back to original.</li>
+   <p>No issues currently. Please let us know in the issues section if you find anything.</p>
    </ul>
