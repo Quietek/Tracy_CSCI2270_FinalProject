@@ -18,6 +18,12 @@ After you have the Encryption initialized you can:
 <li>call getkey() to get the current key</li>
 <li>call generatekey(int keyLength) to generate a new random key of that length (WARNING: this will replace the old key)</li>
 <li>call manualkey(string key) to change the key to what you entered, works for all ASCII characters (WARNING: this will replace the old key)</li>
+<li>getbase() get the current base</li>
+<li>setbase(int > 0) sets the current base</li>
+<li>encriptshift(string keyfragment) shift the ASCII values based on the keyfragment</li>
+<li>decriptshift(string keyfragment) shift the ASCII values based on the keyfragment</li>
+<li>encryptrandom(char keyfragment) add random characters at intervals determined by key</li>
+<li><p>decriptrandom(char keyfragment) remove letters at set intervals (WARNING will remove actual characters from the message if not used after a call of encriptrandom with the same key)</p></li>
 </ul>
 
 <h2>Note: See the main.cpp for how to use the program.</h2>
