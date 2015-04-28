@@ -11,7 +11,7 @@ Encryption prompt()
     cout << "Use existing base and key? (1. Yes, 2. No)" << endl;
     cin >> input;
     cin.ignore(256, '\n');
-    Encryption enc;
+    Encryption enc = Encryption(10, "");
     if (input == 1)
     {
         cout << "Input base" << endl;
@@ -42,11 +42,12 @@ void displayMenu()
     cout << "2. Set new string" << endl;
     cout << "3. Get key in current state" << endl;
     cout << "4. Set new key" << endl;
-    cout << "5. Get base in current state" << endl;
-    cout << "6. Set new base" << endl;
-    cout << "7. Encrypt string" << endl;
-    cout << "8. Decrypt string" << endl;
-    cout << "9. Quit" << endl;
+    cout << "5. Generate new key" << endl;
+    cout << "6. Get base in current state" << endl;
+    cout << "7. Set new base" << endl;
+    cout << "8. Encrypt string" << endl;
+    cout << "9. Decrypt string" << endl;
+    cout << "10. Quit" << endl;
 }
 
 int main(int argc, const char * argv[]) {
@@ -76,27 +77,35 @@ int main(int argc, const char * argv[]) {
             case 4:
                 cout << "Input new key" << endl;
                 getline(cin, keystr);
+                enc.manualkey(keystr);
                 keystr = "";
                 break;
             case 5:
-                cout << enc.getbase() << endl;
-                break;
-            case 6:
-                cout << "Input new base" << endl;
-                cin >> base;
+                cout << "Input new key length" << endl;
+                cin >> input;
+                enc.generatekey(input);
                 cin.ignore(256, '\n');
                 break;
+            case 6:
+                cout << enc.getbase() << endl;
+                break;
             case 7:
+                cout << "Input new base" << endl;
+                cin >> base;
+                enc.setbase(base);
+                cin.ignore(256, '\n');
+                break;
+            case 8:
                 cout << "Encrypting string" << endl;
                 enc.encrypt();
                 cout << enc.getstring() << endl;
                 break;
-            case 8:
+            case 9:
                 cout << "Decrypting string" << endl;
                 enc.decrypt();
                 cout << enc.getstring() << endl;
                 break;
-            case 9: 
+            case 10:
                 cout << "Goodbye!" << endl;
                 appIsRunning = false;
                 break;
