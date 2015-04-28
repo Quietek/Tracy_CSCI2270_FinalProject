@@ -43,6 +43,8 @@ void Encryption::setstring(std::string temp)
 {
     str = temp;
 }
+
+
 void Encryption::encryptshift(std::string keystr)
 {
     std::string temp = "";
@@ -56,20 +58,28 @@ void Encryption::encryptshift(std::string keystr)
     {
         c = Q.front();
         int keypos = Q.size() % keystr.size();
-        c = c - key[keypos];
-        while (c < 0)
-        {
-            c = c + 127;
-        }
-        while (c > 127)
-        {
-            c = c - 127;
-        }
+        int offset = int(keystr[keypos]);
+        c = encryptshiftchar(c, offset);
         temp = temp + c;
         Q.pop();
     }
     str = temp;
 }
+
+char Encryption::encryptshiftchar(char c, int offset)
+{
+    c = c + offset;
+    if (c > 126)
+    {
+        c = c - 126 + 33;
+    }
+    else if (c < 0)
+    {
+        c = 34 + (127 - (c*-1));
+    }
+    return c;
+}
+
 
 void Encryption::decryptshift(std::string keystr)
 {
@@ -84,19 +94,26 @@ void Encryption::decryptshift(std::string keystr)
     {
         c = Q.front();
         int keypos = Q.size() % keystr.size();
-        c = c + key[keypos];
-        while (c > 127)
-        {
-            c = c - 127;
-        }
-        while (c < 0)
-        {
-            c = c + 127;
-        }
+        int offset = int(keystr[keypos]);
+        c = decryptshiftchar(c, offset);
         temp = temp + c;
         Q.pop();
     }
     str = temp;
+}
+
+char Encryption::decryptshiftchar(char c, int offset)
+{
+    c = c - offset;
+    if (c > 126)
+    {
+        c = c - 126 + 32;
+    }
+    else if (c < 32)
+    {
+        c = 127 - (32 - c);
+    }
+    return c;
 }
 
 std::string Encryption::getkey()
