@@ -6,7 +6,7 @@
 
 When you initialize the Encryption class, you have two options:
 <ol>
-    <li>(int keylength, string yourMessage), this will make a random key of the length specified. I recommend a key 10-30% as long as the message</li>
+    <li>(int keylength, string yourMessage), this will make a random key of the length specified. I recommend a key 10-30% as long as the message. Note: the key value must be greater than 1</li>
     <li>(string yourKey, string yourMessage), this alows for you to put in your own custom string, either to speed up decryption or to put weird characters in your key, any ASCII character will work</li> 
 </ol>
 
