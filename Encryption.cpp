@@ -21,7 +21,7 @@ Encryption::Encryption(std::string keystr, std::string temp, int base)
 }
 Encryption::~Encryption()
 {
-    
+
 }
 
 void Encryption::generatekey(int keylength)
@@ -61,9 +61,9 @@ void Encryption::generatekey(int keylength)
             temp = temp + c;
         }
     }
-    
+
     key = temp;
-    
+
 }
 
 void Encryption::manualkey(std::string str)
@@ -74,6 +74,7 @@ void Encryption::manualkey(std::string str)
 void Encryption::setstring(std::string temp)
 {
     str = temp;
+    originalstr = temp; //edits by dylanlcole
 }
 
 
@@ -175,7 +176,7 @@ void Encryption::encryptrandom(std::string keystr)
             str.insert(distance+i, temp);
             i++;
         }
-        
+
     }
 }
 
@@ -245,6 +246,11 @@ void Encryption::encrypt()
 
 void Encryption::decrypt()
 {
+    if(getstring() == originalstr) //added by dylanlcole
+    {
+        std::cout << "Cannot decrypt further" << std::endl;
+    }
+    else{
     std::vector<std::string> reversa;
     int scrambleTemp = base;
     if(scrambleTemp == 0){
@@ -271,7 +277,7 @@ void Encryption::decrypt()
                 temp = temp + key[j];
             }
             reversa.push_back(temp);
-            
+
         }
         if(key[i] == d){
             temp = "";
@@ -280,7 +286,7 @@ void Encryption::decrypt()
                 temp = temp + key[i+1];
                 reversa.push_back(temp);
             }
-            
+
         }
     }
     char determinate;
@@ -296,5 +302,6 @@ void Encryption::decrypt()
                 decryptrandom(temp);
             }
         }
+    }
     }
 }
