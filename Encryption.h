@@ -21,10 +21,10 @@ public:
     void decryptshift(std::string keystr);
     std::string getkey();
     std::string getstring();
-    
+
     char encryptshiftchar(char c, int offset);
     char decryptshiftchar(char c, int offset);
-    
+
     void encryptrandom(std::string key);
     void decryptrandom(std::string key);
     void setbase(int temp);
@@ -33,6 +33,7 @@ protected:
 private:
     std::string key;
     std::string str;
+    std::string originalstr; //ADDED BY dylanlcole
     int base;
 };
 
