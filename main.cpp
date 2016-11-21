@@ -6,33 +6,35 @@ using namespace std;
 
 Encryption prompt()
 {
-    int input, input2, length;
-    string str, str2, str3;
-    cout << "Use existing base and key? (1. Yes, 2. No)" << endl;
-    cin >> input;
-    cin.ignore(256, '\n');
+    int input2, length;
+    string input, str, str2, str3;
     Encryption enc = Encryption(10, "");
-    if (input == 1)
-    {
-        cout << "Input base" << endl;
-        cin >> input2;
+    while(input != "1" && input != "2"){
+        cout << "Use existing base and key? (1. Yes, 2. No)" << endl;
+        cin >> input;
         cin.ignore(256, '\n');
-        cout << "Input key" << endl;
-        getline(cin, str);
-        cout << "Input string to modify" << endl;
-        getline(cin, str2);
-        enc = Encryption(str, str2, input2);
-        return enc;
-    } else if (input == 2)
-    {
-        cout << "How long would you like the key to be?" << endl;
-        cin >> length;
-        cin.ignore(256, '\n');
-        cout << "What is the string?" << endl;
-        getline(cin, str3);
-        enc = Encryption(length, str3);
+        if (input == "1")
+        {
+            cout << "Input base" << endl;
+            cin >> input2;
+            cin.ignore(256, '\n');
+            cout << "Input key" << endl;
+            getline(cin, str);
+            cout << "Input string to modify" << endl;
+            getline(cin, str2);
+            enc = Encryption(str, str2, input2);
+            return enc;
+        } else if (input == "2")
+        {
+            cout << "How long would you like the key to be?" << endl;
+            cin >> length;
+            cin.ignore(256, '\n');
+            cout << "What is the string?" << endl;
+            getline(cin, str3);
+            enc = Encryption(length, str3);
+            return enc;
+        }
     }
-    return enc;
 }
 
 void displayMenu()
