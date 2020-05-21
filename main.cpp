@@ -112,7 +112,7 @@ int main(int argc, const char * argv[]) {
             default:
                 cout << "Invalid Input" << endl;
                 cin.clear();
-                cin.ignore(10000,'\n');
+                //cin.ignore(10000,'\n');
                 break;
         }
     }
